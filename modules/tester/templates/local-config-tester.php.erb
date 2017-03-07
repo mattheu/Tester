@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * File managed by chassis tester extension. Edit at your own risk!
+ */
+
+define( 'DB_NAME',     '<%= @tester_db_name %>' );
+define( 'DB_USER',     '<%= @tester_db_user %>' );
+define( 'DB_PASSWORD', '<%= @tester_db_password %>' );
+define( 'DB_HOST',     '<%= @tester_db_host %>' );
+
+$table_prefix = '<%= @tester_db_prefix %>';
+
+$abspath         = getenv( 'WP_DEVELOP_DIR' ) ? getenv( 'WP_DEVELOP_DIR' ) . '/src/' : '<%= @wpdir %>/';
+$wp_content_path = getenv( 'WP_DEVELOP_DIR' ) ? getenv( 'WP_DEVELOP_DIR' ) . '/src/wp-content/' : '<%= @contentdir %>';
+
+defined( 'ABSPATH' ) or define( 'ABSPATH', $abspath );
+defined( 'WP_CONTENT_DIR' ) or define( 'WP_CONTENT_DIR', $wp_content_path );
+defined( 'WP_UPLOAD_DIR' ) or define( 'WP_UPLOAD_DIR', '/tmp/uploads' );
+
+defined( 'ABSPATH' ) or define( 'ABSPATH', '/vagrant/wp/' );
+defined( 'WP_CONTENT_DIR' ) or define( 'WP_CONTENT_DIR', '/vagrant/wp-content' );
