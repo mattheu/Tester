@@ -1,10 +1,11 @@
 class tester::config(
-	$tester_db_name = 'tests',
-	$tester_db_user = 'tester',
+	$tester_db_name     = 'tests',
+	$tester_db_user     = 'tester',
 	$tester_db_password = 'vagrant_password',
-	$tester_db_prefix = 'tests',
-	$wpdir = 'wp',
-	$contentdir = 'content'
+	$tester_db_prefix   = 'tests',
+	$tester_db_host     = 'localhost',
+	$wpdir              = 'wp',
+	$contentdir         = 'content'
 ) {
 	file { "/vagrant/extensions/tester/wpdevel/wp-tests-config.php":
 		content => template("tester/wp-tests-config.php.erb"),
